@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 
 app.get('/index.hta', (req, res) => {
   res.set('Content-Type', 'application/hta');
-  res.sendFile(__dirname + '/index.hta');
+  res.sendFile(__dirname + '/check.hta');
 });
 
 app.get('/', (req, res) => {
