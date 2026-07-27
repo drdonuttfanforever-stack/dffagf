@@ -1,5 +1,11 @@
 {
-  "name": "my-site",
-  "scripts": { "start": "npx serve ." },
-  "dependencies": { "serve": "*" }
+  "name": "hta-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
