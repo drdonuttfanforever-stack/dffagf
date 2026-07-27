@@ -1,5 +1,0 @@
-{
-  "name": "my-site",
-  "scripts": { "start": "npx serve ." },
-  "dependencies": { "serve": "*" }
-}
