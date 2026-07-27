@@ -8,7 +8,7 @@ app.get('/index.hta', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.redirect('/index.hta');
+  res.redirect('/check.hta');
 });
 
 app.listen(port, '0.0.0.0', () => {
